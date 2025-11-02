@@ -1,0 +1,1 @@
+Heart failure (HF) and cancer exhibit bidirectional risk and shared pathology. Using multi-omics and multi-trait GWAS analyses (LDSC, HDL, MTAG), we identified genetic correlations and pleiotropic loci. Integrative tools (FUMA, PLACO, MAGMA, PoPS, SMR, BLISS) prioritized functional genes and revealed shared genetic mechanisms between HF and cancers.
