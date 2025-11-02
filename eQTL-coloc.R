@@ -1,22 +1,8 @@
-if (!require("BiocManager", quietly = TRUE)){install.packages("BiocManager")}
-BiocManager::install("SummarizedExperiment") # For windows or linux
-BiocManager::install("PupillometryR") # For windows or linux
-
-
-
-
-setwd('C:/Users/dr_li/Desktop/HF')
-# Install from github to get the latest version.
-if(!require("devtools")){install.packages("devtools")}
-devtools::install_github("dingruofan/xQTLbiolinks")
-
 library(data.table)
 library(xQTLbiolinks)
 library(stringr)
 library(coloc)
 
-
-data=fread("G:/GWAS/心衰/MTAG/result/mtag后-MHC.txt")
 data <- data[, c("SNP", "CHR","BP","mtag_pval","FRQ","mtag_beta","mtag_se")]
 colnames(data) <- c("rsid", "chrom","position","pValue","AF","beta","se")
 
@@ -57,6 +43,7 @@ eqtlAsso <- xQTLdownload_eqtlAllAsso(gene="ENSG00000130203",
 gwasEqtldata <- merge(data, eqtlAsso, by="rsid", suffixes = c(".gwas",".eqtl"))
 xQTLvisual_locusCompare(gwasEqtldata[,.(rsid, pValue.eqtl)], 
                         gwasEqtldata[,.(rsid, pValue.gwas)], legend_position = "bottomright")
+
 
 
 
