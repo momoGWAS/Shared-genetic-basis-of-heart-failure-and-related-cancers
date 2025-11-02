@@ -1,0 +1,12 @@
+
+A<-fread('MTAGdecode.txt',sep = ' ')
+fdr <- p.adjust(A$p_BLISS, method = "BH")
+final_df<- data.frame(A, FDR = fdr)
+final_df2<-final_df[final_df$FDR<0.05,]
+write.csv(final_df2, "decode.csv", row.names = FALSE)
+A<-fread('MTAGUKB.txt',sep = ' ')
+fdr <- p.adjust(A$p_BLISS, method = "BH")
+final_df<- data.frame(A, FDR = fdr)
+final_df2<-final_df[final_df$FDR<0.05,]
+write.csv(final_df2, "MTAGUKB.csv", row.names = FALSE)
+
