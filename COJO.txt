@@ -1,0 +1,1 @@
+./gcta  --bfile ./1000g_eur/g1000_eur --cojo-file ./MTAG后_meta_去做COJO.txt --cojo-slct --out MTAG_COJO
